@@ -1,0 +1,22 @@
+{
+  "name": "deep-find-key",
+  "version": "1.0.0",
+  "description": "Get the object I found by key inside an object with children objects",
+  "main": "deepFindKey.js",
+  "scripts": {
+    "start": "node example/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiorRabinovich/deepFindKey.git"
+  },
+  "author": "Lior Rabinovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiorRabinovich/deepFindKey/issues"
+  },
+  "homepage": "https://github.com/LiorRabinovich/deepFindKey#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

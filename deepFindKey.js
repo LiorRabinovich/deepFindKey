@@ -1,6 +1,4 @@
-export function isObject(object) {
-    return typeof object === 'object' && object !== null;
-}
+const isObject = require('lodash/isObject');
 
 /**
  * Deep Find Key
@@ -9,9 +7,9 @@ export function isObject(object) {
  * @param {String} key
  * @returns {Object}
  */
-export function deepFindKey(object, key) {
+function deepFindKey(object, key) {
     if (!isObject(object)) return object;
-    if (object[key]) return { [object[key]]: object };
+    if (object[key] !== undefined) return { [object[key]]: object };
     return Object.keys(object).reduce((accumulator, currentValue) => {
         if (isObject(object[currentValue])) {
             return { ...accumulator, ...deepFindKey(object[currentValue], key) };
@@ -19,3 +17,5 @@ export function deepFindKey(object, key) {
         return accumulator;
     }, {});
 }
+
+module.exports = deepFindKey;
